@@ -46,8 +46,8 @@ CREATE TABLE likes_dislikes_comments (
     comment_id TEXT NOT NULL,
     like INTEGER,
     FOREIGN KEY(user_id) REFERENCES users(id),
-    FOREIGN KEY(post_id) REFERENCES posts(id)
-)
+    FOREIGN KEY(comment_id) REFERENCES comments_posts(id)
+);
 
 INSERT INTO users (id, name, email, password, role)
 VALUES 
@@ -66,3 +66,13 @@ VALUES
     ("c001", "u002", "Entrega do projeto", "p001"),
     ("c002", "u001", "Não vai", "p002"),
     ("c003", "u001", "Me neither", "p003");
+
+SELECT * FROM users;
+
+SELECT * FROM posts;
+
+SELECT * FROM comments_posts;
+
+SELECT * FROM likes_dislikes;
+
+SELECT * FROM likes_dislikes_comments;
