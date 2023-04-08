@@ -7,7 +7,7 @@ export const db = knex({
     },
     useNullAsDefault: true, 
     pool: {
-        min: 0, // número de conexões, esses valores são os recomendados para sqlite3
+        min: 0,
         max: 1,
 				afterCreate: (conn: any, cb: any) => {
             conn.run("PRAGMA foreign_keys = ON", cb)
